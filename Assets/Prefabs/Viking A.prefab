@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 5424301884413039547}
   - component: {fileID: 5424301884413039544}
   - component: {fileID: 5424301884413039543}
+  - component: {fileID: 2234270879684851547}
   m_Layer: 0
   m_Name: Viking A
   m_TagString: Viking
@@ -111,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5423294460333655042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.903, z: -9.25}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5424758570954913528}
   - {fileID: 5429024785822489304}
@@ -161,7 +162,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.34
-  m_Speed: 0.07
+  m_Speed: 0.2
   m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 360
@@ -187,6 +188,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: []
   Tag: Tower
+--- !u!54 &2234270879684851547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423294460333655042}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5423825033704478212
 GameObject:
   m_ObjectHideFlags: 0

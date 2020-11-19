@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
 
     public GameObject Projectile;
     public GameObject Source;
+    public GameObject Camera;
 
     // Update is called once per frame
     public void NewShoot()
@@ -21,7 +22,11 @@ public class Shoot : MonoBehaviour
 
     private Vector3 getTargetPosition()
     {
-        GameObject aim = GameObject.Find("imgAim");
-        return aim.transform.position;
+        Vector3 targetPosition = this.Camera.transform.position;
+        while (targetPosition.y > 0)
+        {
+            targetPosition += this.Camera.transform.forward;
+        }
+        return targetPosition;
     }
 }

@@ -6,6 +6,7 @@ public class PrefabSpawner : MonoBehaviour {
 
     public GameObject[] points;
     public GameObject Prefab;
+    public GameObject ImageTarget;
     public float SpawnDelay;
     public float IncreaseDifficultyDelay;
     public float DifficultyLimit;
@@ -39,7 +40,9 @@ public class PrefabSpawner : MonoBehaviour {
 
         GameObject spawnPoint = this.GetSpawnPoint();
         Transform transform = spawnPoint.transform;
-        Instantiate(this.Prefab, transform.position, transform.rotation);
+
+        GameObject gameObject = Instantiate(this.Prefab, transform.position, transform.rotation);
+        gameObject.transform.parent = this.ImageTarget.transform;
 
         this.nextSpawnTime = Time.time + this.SpawnDelay;
 

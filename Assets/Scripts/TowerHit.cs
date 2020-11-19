@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TowerHit : MonoBehaviour {
 
     public Text TowerHealthText;
-    public Text GameOverText;
+    public GameObject GameOverText;
+
     public int TowerHealthLimit;
     private int towerHealth;
 
@@ -20,13 +21,13 @@ public class TowerHit : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-    	if (collision.gameObject.CompareTag("Viking"))
+    	if (collision.gameObject.CompareTag("Viking")) //  TODO Implements a delay for another Hit --- Map<GameObject, Time> nextHitTimeByObject
         {
             Debug.Log("Tower HIT!");
             this.towerHealth--;
             this.updateTowerHealthText();
 
-            if (this.towerHealth == 0)
+            if (this.towerHealth <= 0)
             {
                 this.gameOver();
             }
@@ -41,6 +42,7 @@ public class TowerHit : MonoBehaviour {
     private void gameOver()
     {
         Time.timeScale = 0;
-        this.GameOverText.gameObject.SetActive(true);
+        this.GameOverText.SetActive(true);
+        this.GameOverText.GetComponent<AudioSource>().Play(0);
     }
 }
